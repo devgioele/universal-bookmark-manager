@@ -9,6 +9,27 @@ Copy the bookmark script and configure the variables in the config section.
 You may use different menu than [tofi](https://github.com/philj56/tofi),
 like [dmenu](https://tools.suckless.org/dmenu/).
 
+Bind the bookmark script to some key combination. With [i3](https://i3wm.org/) or [sway](https://swaywm.org/)
+it is done like this:
+```
+# Pick bookmark
+bindsym $mod+i exec bookmark pick
+# Add bookmark
+bindsym $mod+Shift+i exec bookmark add
+# Remove bookmark
+bindsym $mod+Control+Shift+i exec bookmark remove
+```
+
+When you add a bookmark, the menu asks you for tags that you may want to bind to the new bookmark.
+A list of already existing tags is shown, so that you avoid creating tags that are conceptually the same
+but spelled in a slightly different way.
+To stop adding tags, close the menu (usually with the `ESC` key).
+
+## Notifications
+
+Notifications are sent using the `notify-send` command. If you do not receive any,
+make sure to have a notification server like [dunst](https://dunst-project.org/) installed.
+
 ## Importing bookmarks from your browser
 
 This repo contains a small conversion software to import your bookmarks from a Netscape HTML file.
