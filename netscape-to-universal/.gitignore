@@ -1,0 +1,6 @@
+# Rust
+debug/
+target/
+
+# Resources
+res/
