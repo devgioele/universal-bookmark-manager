@@ -3,7 +3,7 @@
 A [suckless](https://suckless.org/philosophy/) bookmark manager that is minimalistic, works offline and
 can store whatever URI you want.
 
-## Usage
+## Configuration
 
 Copy the bookmark script and configure the variables in the config section.
 You may use different menu than [tofi](https://github.com/philj56/tofi),
@@ -20,10 +20,18 @@ bindsym $mod+Shift+i exec bookmark add
 bindsym $mod+Control+Shift+i exec bookmark remove
 ```
 
-When you add a bookmark, the menu asks you for tags that you may want to bind to the new bookmark.
+## Usage
+
+When you add a bookmark, the content of the primary clipboard is used (the selected text, not the copied one).
+The menu then asks you for tags that you may want to bind to the new bookmark.
 A list of already existing tags is shown, so that you avoid creating tags that are conceptually the same
 but spelled in a slightly different way.
 To stop adding tags, close the menu (usually with the `ESC` key).
+
+Picking a bookmark is straightforward. The URI of the selected bookmark is copied to the secondary clipboard
+(as if you copied it with `Ctrl+C`).
+The URI is not written out using some automation tool like `ydotools`, because of security
+concerns arising from giving access to `/dev/uinput`.
 
 ## Notifications
 
