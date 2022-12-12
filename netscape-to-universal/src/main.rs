@@ -1,6 +1,11 @@
 use crate::node_ref_ext::*;
 use kuchiki::{parse_html, traits::TendrilSink, NodeRef};
-use std::{env, fs::File, io::Error, io::ErrorKind, path::Path};
+use std::{
+    env,
+    fs::File,
+    io::{Error, ErrorKind},
+    path::Path,
+};
 
 mod node_ref_ext;
 
@@ -15,6 +20,7 @@ fn main() -> Result<(), Error> {
         }
     }
     .to_owned();
+
     let mut reader: Box<dyn std::io::Read> = if input_path.as_os_str() == "-" {
         // Get input from stdin
         Box::new(std::io::stdin())
@@ -30,7 +36,8 @@ fn main() -> Result<(), Error> {
     };
 
     let node = parse_html().from_utf8().read_from(&mut reader).unwrap();
-    to_universal(node)
+    to_universal(node);
+    Ok(())
 }
 
 // 1. Traverse the tree in a breadth-first way
@@ -42,7 +49,7 @@ fn main() -> Result<(), Error> {
 // Output the node's href and the node's ancestor list as list of tags (URI #tag1 #tag2...)
 // 4. For each children that is not a leaf,
 // continue the scan (step 2).
-fn to_universal(node: NodeRef) -> Result<(), Error> {
+fn to_universal(node: NodeRef) {
     if let Some(root) = node.children().find(|n| n.is_element("HTML")) {
         if let Some(body) = root.children().find(|child| child.is_element("BODY")) {
             if let Some(content) = body.children().find(|child| child.is_element("DL")) {
@@ -54,8 +61,6 @@ fn to_universal(node: NodeRef) -> Result<(), Error> {
             }
         }
     }
-
-    Ok(())
 }
 
 fn to_universal_rec(node: &NodeRef, mut ancestors: Vec<String>) {
