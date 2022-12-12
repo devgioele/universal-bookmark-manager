@@ -59,3 +59,5 @@ Example bookmark file:
 https://github.com #github #programming
 https://example.com #Something #example-tag #programming
 ```
+
+For a more detailed description, see the [file format specification](https://github.com/devgioele/universal-bookmark-manager/blob/main/formats.md).
