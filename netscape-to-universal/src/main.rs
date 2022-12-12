@@ -21,10 +21,7 @@ fn main() -> Result<(), Error> {
     } else {
         // Get input from file
         match File::open(&input_path) {
-            Ok(file) => {
-                println!("File open");
-                Box::new(file)
-            }
+            Ok(file) => Box::new(file),
             Err(err) => {
                 let msg = format!("{}: {}", input_path.display(), err);
                 return Err(Error::new(ErrorKind::InvalidData, msg));
@@ -47,9 +44,7 @@ fn main() -> Result<(), Error> {
 // continue the scan (step 2).
 fn to_universal(node: NodeRef) -> Result<(), Error> {
     if let Some(root) = node.children().find(|n| n.is_element("HTML")) {
-        println!("ROOT");
         if let Some(body) = root.children().find(|child| child.is_element("BODY")) {
-            println!("BODY");
             if let Some(content) = body.children().find(|child| child.is_element("DL")) {
                 for item in content.children() {
                     to_universal_rec(&item, vec![]);
