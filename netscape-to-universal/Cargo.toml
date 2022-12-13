@@ -1,10 +1,11 @@
 [package]
 name = "netscape-to-universal"
 description = "A Netscape bookmarks converter for the universal bookmark manager"
-version = "1.3.0"
+version = "1.4.0"
 edition = "2021"
 authors = ["devgioele"]
 license = "GPL-3.0-or-later"
+repository = "https://github.com/devgioele/universal-bookmark-manager"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
