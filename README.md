@@ -40,14 +40,8 @@ make sure to have a notification server like [dunst](https://dunst-project.org/)
 
 ## Importing bookmarks from your browser
 
-This repo contains a small conversion software to import your bookmarks from a Netscape HTML file.
-Here is how to do it:
-1. Use your browser to export the bookmarks as HTML.
-2. Make sure you have [Rust](https://www.rust-lang.org/tools/install) installed and run `cargo install netscape-to-universal`.
-3. Run `netscape-to-universal <input_file> >> <output_file>`, where `<input_file>` is the path to the HTML file
-and `<output_file>` is the path to the bookmarks file (usually located at ~/.local/share/bookmarking/bookmarks).
-4. Review the bookmarks file and edit any tags that you find inappropriate.
-5. Optionally, remove the conversion software with `cargo uninstall netscape-to-universal` once you are done.
+This repo contains a simple conversion software to import the bookmarks from a browser.
+Consult [its readme](https://github.com/devgioele/universal-bookmark-manager/blob/main/netscape-to-universal/README.md) for further instructions.
 
 ## How bookmarks are stored
 
@@ -61,5 +55,3 @@ Example bookmark file:
 https://github.com #github #programming
 https://example.com #Something #example-tag #programming
 ```
-
-For a more detailed description, see the [file format specification](https://github.com/devgioele/universal-bookmark-manager/blob/main/formats.md).
