@@ -12,4 +12,4 @@ and `<output_file>` is the path to the bookmarks file (usually located at ~/.loc
 4. Review the bookmarks file and edit any tags that you find inappropriate.
 5. Optionally, remove the conversion software with `cargo uninstall netscape-to-universal` once you are done.
 
-For a more detailed description, see the [file format specification](https://github.com/devgioele/universal-bookmark-manager/blob/main/formats.md).
+For a detailed description of the file formats, see [the specification](https://github.com/devgioele/universal-bookmark-manager/blob/main/formats.md).
