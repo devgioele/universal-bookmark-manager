@@ -6,7 +6,7 @@ can store whatever URI you want.
 ## Configuration
 
 Copy the bookmark script and configure the variables in the config section.
-You may use different menu than [tofi](https://github.com/philj56/tofi),
+You may use a different menu than [tofi](https://github.com/philj56/tofi),
 like [dmenu](https://tools.suckless.org/dmenu/).
 
 Bind the bookmark script to some key combination. With [i3](https://i3wm.org/) or [sway](https://swaywm.org/)
@@ -46,6 +46,8 @@ Here is how to do it:
 2. Make sure you have [Rust](https://www.rust-lang.org/tools/install) installed and run `cargo install netscape-to-universal`.
 3. Run `netscape-to-universal <input_file> >> <output_file>`, where `<input_file>` is the path to the HTML file
 and `<output_file>` is the path to the bookmarks file (usually located at ~/.local/share/bookmarking/bookmarks).
+4. Review the bookmarks file and edit any tags that you find inappropriate.
+5. Optionally, remove the conversion software with `cargo uninstall netscape-to-universal` once you are done.
 
 ## How bookmarks are stored
 
