@@ -1,8 +1,10 @@
 [package]
 name = "netscape-to-universal"
-version = "0.1.0"
+description = "A Netscape bookmarks converter for the universal bookmark manager"
+version = "1.1.0"
 edition = "2021"
 authors = ["devgioele"]
+license-file = "../LICENSE.md"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
