@@ -43,7 +43,9 @@ make sure to have a notification server like [dunst](https://dunst-project.org/)
 This repo contains a simple conversion software to import the bookmarks from a browser.
 Consult [its readme](https://github.com/devgioele/universal-bookmark-manager/blob/main/netscape-to-universal/README.md) for further instructions.
 
-## How bookmarks are stored
+## Design
+
+### Storing bookmarks
 
 Bookmarks are saved in a single plain text file and are organized with tags instead of directories.
 This allows bookmarks to be bound to multiple keywords,
@@ -55,3 +57,10 @@ Example bookmark file:
 https://github.com #github #programming
 https://example.com #Something #example-tag #programming
 ```
+
+### Organizing bookmarks
+
+Humans tend to organize ideas in a network-like
+fashion. Tags can represent networks, while directories cannot,
+because a file cannot have multiple parent directories.
+This is why bookmarks are organized with tags rather than with directories.
