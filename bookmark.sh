@@ -61,7 +61,7 @@ then
       exit 1
     fi
     # Verify existence of bookmark, ignoring any tags
-    if grep -q "^$bookmark" "$file"
+    if grep -qP "^$bookmark(?= )" "$file"
     then
       notify-send "Already bookmarked!"
     else
