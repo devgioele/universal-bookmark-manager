@@ -64,3 +64,15 @@ Humans tend to organize ideas in a network-like
 fashion. Tags can represent networks, while directories cannot,
 because a file cannot have multiple parent directories.
 This is why bookmarks are organized with tags rather than with directories.
+
+## Known issues
+
+### Overlapping tags
+
+When adding a new bookmark and choosing a new tag whose content is matched by the beginning of an existing tag,
+the existing tag is used instead of the new shorter one.
+E.g. if the tag `cooking` already exists and the tag `cook` is added,
+the tag `cooking` is used instead of `cook`.
+This is caused by the menu software you use. You may create a fork of the menu software of your choice
+so that when you press a dedicated key, the shorter written tag is chosen over the closest matching tag.
+Better solutions to this are welcome!
